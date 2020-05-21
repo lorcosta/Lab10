@@ -35,12 +35,12 @@ public class Simulator {
 			Integer numPersone=this.generaNumPersone();
 			ThreadLocalRandom random= ThreadLocalRandom.current();
 			Duration durata=Duration.of(random.nextInt(60,121), ChronoUnit.MINUTES);
-			float tolleranza=(float)Math.random();
+			float tolleranza=random.nextInt(0,91)/10;
 			Event e=new Event(oraArrivoGruppo,EventType.ARRIVO_GRUPPO_CLIENTI,numPersone,durata,tolleranza);
 			this.queue.add(e);
 			oraArrivoGruppo=oraArrivoGruppo.plus(arrivoGruppo());
 			i++;
-		}while(oraArrivoGruppo.isBefore(ORA_CHIUSURA));//while(i<2000);
+		}while(i<2000);//while(oraArrivoGruppo.isBefore(ORA_CHIUSURA));//
 		//eseguo ciclo di simulazione
 		while(!this.queue.isEmpty()) {
 			Event e=this.queue.poll();
