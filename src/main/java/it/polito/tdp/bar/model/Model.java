@@ -3,7 +3,6 @@ package it.polito.tdp.bar.model;
 public class Model {
 	
 	
-	public static void main(String args[]) {
 		Simulator simulatore=new Simulator();
 		simulatore.run();
 		
@@ -11,6 +10,5 @@ public class Model {
 		Integer soddisfatti=simulatore.getNumero_clienti_soddisfatti();
 		Integer insoddisfatti=simulatore.getNumero_clienti_insoddisfatti();
 		
-		System.out.format("Clienti totali: %d, clienti soddisfatti: %d, clienti insoddisfatti: %d",	totClienti,soddisfatti,insoddisfatti);
-	}
+		//System.out.format("Clienti totali: %d, clienti soddisfatti: %d, clienti insoddisfatti: %d",	totClienti,soddisfatti,insoddisfatti);
 }
