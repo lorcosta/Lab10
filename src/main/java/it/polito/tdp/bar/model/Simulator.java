@@ -16,7 +16,7 @@ public class Simulator {
 	private Integer T6posti=4;
 	private Integer T4posti=5;
 	private final LocalTime ORA_APERTURA=LocalTime.of(6, 00);
-	private final LocalTime ORA_CHIUSURA=LocalTime.of(22, 00);
+	//private final LocalTime ORA_CHIUSURA=LocalTime.of(22, 00);
 	
 	//modello del mondo
 	//valori da calcolare
@@ -75,13 +75,9 @@ public class Simulator {
 					if(rand>e.getTolleranza()) {
 						this.numero_totale_clienti+=e.getNumPersone();
 						this.numero_clienti_soddisfatti+=e.getNumPersone();
-						//this.numero_totale_clienti++;
-						//this.numero_clienti_soddisfatti++;
 					}else {
 						this.numero_clienti_insoddisfatti+=e.getNumPersone();
 						this.numero_totale_clienti+=e.getNumPersone();
-						//this.numero_totale_clienti++;
-						//this.numero_clienti_insoddisfatti++;
 					}
 				}
 				//2.aggiorno i risultati
@@ -100,11 +96,11 @@ public class Simulator {
 			occupanti=e.getNumPersone();
 			if(occupanti<=4) {
 				this.T4posti++;
-			}else if(occupanti<=6 && this.T6posti>0 && ((float)occupanti/(float)this.T6posti)>=0.5) {
+			}else if(occupanti<=6 && this.T6posti>0) {
 				this.T6posti++;
-			}else if(occupanti<=8 && this.T8posti>0 && ((float)occupanti/(float)this.T8posti)>=0.5) {
+			}else if(occupanti<=8 && this.T8posti>0) {
 				this.T8posti++;
-			}else if(occupanti<=10 && this.T10posti>0 && ((float)occupanti/(float)this.T10posti)>=0.5) {
+			}else if(occupanti<=10 && this.T10posti>0) {
 				this.T10posti++;
 			}
 			break;
